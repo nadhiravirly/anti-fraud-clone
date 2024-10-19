@@ -51,17 +51,17 @@ def parse_args():
 
 def base_load_data(args: dict):
     # load S-FFSD dataset for base models
-    data_path = "data/S-FFSD.csv"
+    data_path = "/content/drive/MyDrive/data_anti_fraud/S-FFSD.csv"
     feat_df = pd.read_csv(data_path)
     train_size = 1 - args['test_size']
     method = args['method']
     # for ICONIP16 & AAAI20
     if args['method'] == 'stan':
-        if os.path.exists("data/tel_3d.npy"):
+        if os.path.exists("/content/drive/MyDrive/data_anti_fraud/tel_3d.npy"):
             return
         features, labels = span_data_3d(feat_df)
     else:
-        if os.path.exists("data/tel_2d.npy"):
+        if os.path.exists("/content/drive/MyDrive/data_anti_fraud/tel_2d.npy"):
             return
         features, labels = span_data_2d(feat_df)
     num_trans = len(feat_df)

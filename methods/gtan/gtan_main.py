@@ -232,12 +232,11 @@ def load_gtan_data(dataset: str, test_size: float):
     :param test_size: the size of test set
     :returns: feature, label, graph, category features
     """
-    # prefix = './antifraud/data/'
-    prefix = os.path.join(os.path.dirname(__file__), "..", "..", "data/")
+    prefix = '/content/drive/MyDrive/data_anti_fraud/'
     if dataset == "S-FFSD":
         cat_features = ["Target", "Location", "Type"]
 
-        df = pd.read_csv(prefix + "S-FFSDneofull.csv")
+        df = pd.read_csv(os.path.join(prefix, 'S-FFSDneofull.csv'))
         df = df.loc[:, ~df.columns.str.contains('Unnamed')]
         data = df[df["Labels"] <= 2]
         data = data.reset_index(drop=True)
