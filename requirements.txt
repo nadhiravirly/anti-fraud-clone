@@ -1,8 +1,6 @@
-scikit-learn
+scikit-learn==1.0.2
 pandas==1.3.5
-pyyaml
-torchvision
-torchaudio
+numpy==1.21.6
 networkx==2.6.3
 scipy==1.7.3
-dgl -f https://data.dgl.ai/wheels/torch-2.4/repo.html
+typing-extensions==3.7.4.3
